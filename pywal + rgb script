@@ -1,0 +1,9 @@
+#!/bin/bash
+
+hex_color=$(cat ~/.cache/wal/colors head -n 1)
+r=$(printf "%d" 0x"${hex_color:1:2}")
+g=$(printf "%d" 0x"${hex_color:3:2}")
+b=$(printf "%d" 0x"${hex_color:5:2}")
+
+#calls rgb launch script
+~/acer-predator-turbo-and-rgb-keyboard-linux-module/facer_rgb.py -m 1 -s 1 -Cr $r -cG $g -cB $b
